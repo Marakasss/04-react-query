@@ -34,17 +34,19 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
         </div>
 
         <form action={handleSubmit} className={css.form}>
-          <input
-            className={css.input}
-            type="text"
-            name="query"
-            autoComplete="off"
-            placeholder="Search movies..."
-            autoFocus
-          />
-          <button className={css.button} type="submit">
-            Search
-          </button>
+          <div className={css.inputGroup}>
+            <input
+              className={css.input}
+              type="text"
+              name="query"
+              autoComplete="off"
+              placeholder="Search movies..."
+              autoFocus
+            />
+            <button className={css.button} type="submit">
+              Search
+            </button>
+          </div>
         </form>
       </div>
     </header>
