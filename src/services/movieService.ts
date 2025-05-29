@@ -14,7 +14,7 @@ export default async function fetchMovies(
     throw new Error("TMDB token is missing in environment variables");
   }
 
-  const response = await axios.get<MoviesResponce>(
+  const response = await axios.get<MoviesResponse>(
     "https://api.themoviedb.org/3/search/movie",
     {
       params: {
