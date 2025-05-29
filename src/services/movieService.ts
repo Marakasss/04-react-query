@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Movie } from "../types/movie";
 const TMDB_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
-interface MoviesResponce {
+interface MoviesResponse {
   results: Movie[];
   page: number;
   total_pages: number;
@@ -9,7 +9,7 @@ interface MoviesResponce {
 export default async function fetchMovies(
   query: string,
   page: number
-): Promise<MoviesResponce> {
+): Promise<MoviesResponse> {
   if (!TMDB_TOKEN) {
     throw new Error("TMDB token is missing in environment variables");
   }
@@ -26,5 +26,5 @@ export default async function fetchMovies(
     }
   );
 
-  return response.data ;
+  return response.data;
 }

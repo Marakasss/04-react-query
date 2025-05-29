@@ -1,6 +1,6 @@
-import css from "./MainHeder.module.css";
+import css from "./MainHeader.module.css";
 
-export default function MainHeder() {
+export default function MainHeader() {
   return (
     <div className={css.header}>
       <h1>

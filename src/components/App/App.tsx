@@ -7,13 +7,13 @@ import ReactPaginate from "react-paginate";
 import type { Movie } from "../../types/movie";
 import fetchMovies from "../../services/movieService";
 import MovieGrid from "../MovieGrid/MovieGrid";
-import Modal from "../Common/Modal";
 import MovieModal from "../MovieModal/MovieModal";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import RandomBackdrop from "../RandomBackdrop/RandomBackdrop";
 import { getRandomBackdropUrl } from "../../services/getRandomBackdrop";
 import Loader from "../Loader/Loader";
-import MainHeder from "../MainHeder/MainHeder";
+import MainHeader from "../MainHeader/MainHeader";
+// import Modal from "../Common/Modal";
 
 export default function App() {
   //STATES
@@ -118,7 +118,7 @@ export default function App() {
         </>
       ) : (
         <>
-          <MainHeder />
+          <MainHeader />
           {backGround && <RandomBackdrop bgUrl={backGround} />}
         </>
       )}
@@ -126,14 +126,13 @@ export default function App() {
       {/* -------------MODAL---------------- */}
 
       {isModalOpen && selectedMovie && (
-        <Modal
+        <MovieModal
+          movie={selectedMovie}
           onClose={() => {
             closeModal();
             setSelectedMovie(null);
           }}
-        >
-          <MovieModal movie={selectedMovie} />
-        </Modal>
+        />
       )}
     </>
   );
